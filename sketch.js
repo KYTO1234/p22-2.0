@@ -24,7 +24,7 @@ function setup() {
 	//create fairy sprite and add animation for fairy
 	 fairy= createSprite(130,520);
 	fairy.addAnimation("flyingfairy",fairyImage); 
-    
+    fairy.scale=0.25;
 
 	star = createSprite(650,30);
 	star.addImage(starImg);
@@ -65,9 +65,11 @@ function keyPressed() {
 		Matter.Body.setStatic(starBody,false); 
 	}
 
-	if(keyDown === RIGHT_ARROW){
+	if(keyCode === RIGHT_ARROW){
 		fairy.x = fairy.x + 20;
 	}
 	//writw code to move fairy left and right
-	
+	if(keyCode === LEFT_ARROW){
+		fairy.x = fairy.x - 20;
+	}
 }
